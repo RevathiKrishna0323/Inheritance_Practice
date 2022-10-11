@@ -22,7 +22,7 @@ public class EmployeeImpl {
         System.out.println("The incremented salary : " + manager.calculateIncrement(1.25f));
     }
 }
-}
+
 
 
 
