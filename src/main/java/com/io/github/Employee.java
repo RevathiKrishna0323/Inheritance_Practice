@@ -8,18 +8,18 @@ package com.io.github;
 
 import java.util.Objects;
 
-public class Employee {
+public abstract class Employee {
     private String employeeName;
     private String employeeCode;
     private String dateOfBirth;
-    private String age;
-    private String salary;
+    private int age;
+    private double salary;
 
-    public Employee(String age) {
+    public Employee(int age) {
         this.age = age;
     }
 
-    public Employee(String employeeName, String employeeCode, String dateOfBirth, String age, String salary) {
+    public Employee(String employeeName, String employeeCode, String dateOfBirth, int age, double salary) {
         this.employeeName = employeeName;
         this.employeeCode = employeeCode;
         this.dateOfBirth = dateOfBirth;
@@ -51,19 +51,19 @@ public class Employee {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public String getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(String salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 
@@ -84,4 +84,6 @@ public class Employee {
     public int hashCode() {
         return Objects.hash(employeeName, employeeCode, dateOfBirth, age, salary);
     }
+
+    public abstract double calculateIncrement(float hikePercentage);
 }
