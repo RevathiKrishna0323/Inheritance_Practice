@@ -7,4 +7,7 @@
 package com.io.github;
 
 public class Manager {
+    private int teamSize;
+    private int teamRatings;
+
 }
