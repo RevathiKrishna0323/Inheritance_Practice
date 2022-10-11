@@ -13,4 +13,7 @@ public class Employee {
     private String age;
     private String salary;
 
+    public Employee(String age) {
+        this.age = age;
+    }
 }
