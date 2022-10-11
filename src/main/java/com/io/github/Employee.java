@@ -6,6 +6,8 @@
 
 package com.io.github;
 
+import java.util.Objects;
+
 public class Employee {
     private String employeeName;
     private String employeeCode;
@@ -63,5 +65,29 @@ public class Employee {
 
     public void setSalary(String salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeName='" + employeeName + '\'' +
+                ", employeeCode='" + employeeCode + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", age='" + age + '\'' +
+                ", salary='" + salary + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Objects.equals(employeeName, employee.employeeName) && Objects.equals(employeeCode, employee.employeeCode) && Objects.equals(dateOfBirth, employee.dateOfBirth) && Objects.equals(age, employee.age) && Objects.equals(salary, employee.salary);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeName, employeeCode, dateOfBirth, age, salary);
     }
 }
